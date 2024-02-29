@@ -10,7 +10,7 @@ compileJava {
     sourceCompatibility = targetCompatibility = 1.8
 }
 
-version = "${fw_version}${-> getVersionSuffix()}"
+version = "${-> getVersionSuffix()}"
 group = "io.github.zekerzhayard"
 archivesBaseName = rootProject.name
 
@@ -34,7 +34,7 @@ repositories {
 dependencies {
     compileOnly "com.google.code.gson:gson:2.8.7"
     compileOnly "cpw.mods:modlauncher:8.0.9"
-    compileOnly "net.minecraftforge:installer:2.1.9"
+    compileOnly "net.minecraftforge:installer:2.2.7"
     compileOnly "net.sf.jopt-simple:jopt-simple:5.0.4"
 
     provided project(":common")
@@ -96,5 +96,5 @@ static String getVersionSuffix() {
     } else if (System.getenv("GITHUB_RUN_NUMBER") != null && System.getenv("GITHUB_SHA") != null) {
         return "-s." + System.getenv("GITHUB_RUN_NUMBER") + "-" + System.getenv("GITHUB_SHA").substring(0, 7)
     }
-    return "-LOCAL"
+    return "-mmc2"
 }
