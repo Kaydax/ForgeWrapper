@@ -96,5 +96,5 @@ static String getVersionSuffix() {
     } else if (System.getenv("GITHUB_RUN_NUMBER") != null && System.getenv("GITHUB_SHA") != null) {
         return "-s." + System.getenv("GITHUB_RUN_NUMBER") + "-" + System.getenv("GITHUB_SHA").substring(0, 7)
     }
-    return "-mmc2"
+    return "mmc2"
 }
